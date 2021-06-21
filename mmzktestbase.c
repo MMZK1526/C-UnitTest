@@ -43,7 +43,7 @@ bool _mmzk_assert_equal_any(
 	actual_str = to_string(actual);
 	mmzk_test_summary_fail_num++;
 	if (!mmzk_assert_show_success && mmzk_assert_show_caption) {
-		puts(mmzk_assert_caption);
+		printf(mmzk_assert_caption, stdout);
 		mmzk_assert_show_caption = false;
 	}
 	fputs(msg, stdout);
@@ -79,7 +79,7 @@ bool _mmzk_assert_equal_bool(
 	} else {
 		mmzk_test_summary_fail_num++;
 		if (!mmzk_assert_show_success && mmzk_assert_show_caption) {
-			puts(mmzk_assert_caption);
+			printf(mmzk_assert_caption, stdout);
 			mmzk_assert_show_caption = false;
 		}
 		fputs(msg, stdout);
@@ -115,7 +115,7 @@ bool _mmzk_assert_equal_char(
 	}
 	mmzk_test_summary_fail_num++;
 	if (!mmzk_assert_show_success && mmzk_assert_show_caption) {
-		puts(mmzk_assert_caption);
+		printf(mmzk_assert_caption, stdout);
 		mmzk_assert_show_caption = false;
 	}
 	fputs(msg, stdout);
@@ -152,7 +152,7 @@ bool _mmzk_assert_equal_double(
 	} else {
 		mmzk_test_summary_fail_num++;
 		if (!mmzk_assert_show_success && mmzk_assert_show_caption) {
-			puts(mmzk_assert_caption);
+			printf(mmzk_assert_caption, stdout);
 			mmzk_assert_show_caption = false;
 		}
 		fputs(msg, stdout);
@@ -189,7 +189,7 @@ bool _mmzk_assert_equal_float(
 	} else {
 		mmzk_test_summary_fail_num++;
 		if (!mmzk_assert_show_success && mmzk_assert_show_caption) {
-			puts(mmzk_assert_caption);
+			printf(mmzk_assert_caption, stdout);
 			mmzk_assert_show_caption = false;
 		}
 		fputs(msg, stdout);
@@ -225,7 +225,7 @@ bool _mmzk_assert_equal_int8(
 	} 
 	mmzk_test_summary_fail_num++;
 	if (!mmzk_assert_show_success && mmzk_assert_show_caption) {
-		puts(mmzk_assert_caption);
+		printf(mmzk_assert_caption, stdout);
 		mmzk_assert_show_caption = false;
 	}
 	fputs(msg, stdout);
@@ -261,7 +261,7 @@ bool _mmzk_assert_equal_int16(
 	}
 	mmzk_test_summary_fail_num++;
 	if (!mmzk_assert_show_success && mmzk_assert_show_caption) {
-		puts(mmzk_assert_caption);
+		printf(mmzk_assert_caption, stdout);
 		mmzk_assert_show_caption = false;
 	}
 	fputs(msg, stdout);
@@ -297,7 +297,7 @@ bool _mmzk_assert_equal_int32(
 	}
 	mmzk_test_summary_fail_num++;
 	if (!mmzk_assert_show_success && mmzk_assert_show_caption) {
-		puts(mmzk_assert_caption);
+		printf(mmzk_assert_caption, stdout);
 		mmzk_assert_show_caption = false;
 	}
 	fputs(msg, stdout);
@@ -333,7 +333,7 @@ bool _mmzk_assert_equal_int64(
 	}
 	mmzk_test_summary_fail_num++;
 	if (!mmzk_assert_show_success && mmzk_assert_show_caption) {
-		puts(mmzk_assert_caption);
+		printf(mmzk_assert_caption, stdout);
 		mmzk_assert_show_caption = false;
 	}
 	fputs(msg, stdout);
@@ -370,7 +370,7 @@ bool _mmzk_assert_equal_ptr(
 	}
 	mmzk_test_summary_fail_num++;
 	if (!mmzk_assert_show_success && mmzk_assert_show_caption) {
-		puts(mmzk_assert_caption);
+		printf(mmzk_assert_caption, stdout);
 		mmzk_assert_show_caption = false;
 	}
 	fputs(msg, stdout);
@@ -404,7 +404,7 @@ bool _mmzk_assert_equal_string(
 	}
 	mmzk_test_summary_fail_num++;
 	if (!mmzk_assert_show_success && mmzk_assert_show_caption) {
-		puts(mmzk_assert_caption);
+		printf(mmzk_assert_caption, stdout);
 		mmzk_assert_show_caption = false;
 	}
 	fputs(msg, stdout);
@@ -454,7 +454,7 @@ bool _mmzk_assert_equal_struct(
 
 		mmzk_test_summary_fail_num++;
 		if (!mmzk_assert_show_success && mmzk_assert_show_caption) {
-			puts(mmzk_assert_caption);
+			printf(mmzk_assert_caption, stdout);
 			mmzk_assert_show_caption = false;
 		}
 		fputs(msg, stdout);
@@ -494,7 +494,7 @@ bool _mmzk_assert_equal_uint8(
 	}
 	mmzk_test_summary_fail_num++;
 	if (!mmzk_assert_show_success && mmzk_assert_show_caption) {
-		puts(mmzk_assert_caption);
+		printf(mmzk_assert_caption, stdout);
 		mmzk_assert_show_caption = false;
 	}
 	fputs(msg, stdout);
@@ -530,7 +530,7 @@ bool _mmzk_assert_equal_uint16(
 	}
 	mmzk_test_summary_fail_num++;
 	if (!mmzk_assert_show_success && mmzk_assert_show_caption) {
-		puts(mmzk_assert_caption);
+		printf(mmzk_assert_caption, stdout);
 		mmzk_assert_show_caption = false;
 	}
 	fputs(msg, stdout);
@@ -566,7 +566,7 @@ bool _mmzk_assert_equal_uint32(
 	}
 	mmzk_test_summary_fail_num++;
 	if (!mmzk_assert_show_success && mmzk_assert_show_caption) {
-		puts(mmzk_assert_caption);
+		printf(mmzk_assert_caption, stdout);
 		mmzk_assert_show_caption = false;
 	}
 	fputs(msg, stdout);
@@ -602,7 +602,7 @@ bool _mmzk_assert_equal_uint64(
 	}
 	mmzk_test_summary_fail_num++;
 	if (!mmzk_assert_show_success && mmzk_assert_show_caption) {
-		puts(mmzk_assert_caption);
+		printf(mmzk_assert_caption, stdout);
 		mmzk_assert_show_caption = false;
 	}
 	fputs(msg, stdout);
@@ -626,7 +626,7 @@ bool _mmzk_assert_fail(
 	mmzk_test_summary_test_num++;
 	mmzk_test_summary_fail_num++;
 	if (!mmzk_assert_show_success && mmzk_assert_show_caption) {
-		puts(mmzk_assert_caption);
+		printf(mmzk_assert_caption, stdout);
 		mmzk_assert_show_caption = false;
 	}
 	puts(msg);
@@ -651,7 +651,7 @@ bool _mmzk_assert_true(
 	} else {
 		mmzk_test_summary_fail_num++;
 		if (!mmzk_assert_show_success && mmzk_assert_show_caption) {
-			puts(mmzk_assert_caption);
+			printf(mmzk_assert_caption, stdout);
 			mmzk_assert_show_caption = false;
 		}
 		fputs(msg, stdout);
