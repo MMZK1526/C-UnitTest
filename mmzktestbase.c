@@ -694,6 +694,7 @@ int _mmzk_test_report(
 	(*summary_fun)();
 
 	fail_num = mmzk_test_summary_fail_num - fail_num;
+	puts("------------------------------------------------------------\n");
 	if (fail_num) {
 		printf("Number of failed tests in %s: %llu.\n", 
 			file, fail_num);

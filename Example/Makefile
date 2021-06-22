@@ -10,12 +10,12 @@ all:		$(BUILD)
 testsuite:		mmzktestbase.o testsuite.o _integraltest.o
 integraltest:		integraltest.o ../mmzktestbase.o
 
-_integraltest.o:	../mmzktestbase.h $(TSH)
+_integraltest.o:	integraltest.c ../mmzktestbase.h $(TSH)
 	$(CC) $(CFLAGS) -c integraltest.c -o _integraltest.o
 
 ../mmzktestbase.o:	../mmzktestbase.h
 
-integraltest.o:		../mmzktestbase.h $(TSH)
+integraltest.o:		integraltest.c ../mmzktestbase.h $(TSH)
 	$(CC) $(CFLAGS) -c -DTEST_MAIN integraltest.c
 
 clean:
