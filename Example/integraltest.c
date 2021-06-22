@@ -49,7 +49,7 @@ static void pointer_test(void) {
 	mmzk_assert_pop_caption("\n");
 }
 
-void test_summary(void) {
+void integraltest_summary(void) {
 	mmzk_test_summary(int_test, "Test int & uint:\n");
 	mmzk_test_summary(char_bool_test, "Test char & bool:\n");
 	mmzk_test_summary(pointer_test, "Test pointer:\n");
@@ -58,7 +58,7 @@ void test_summary(void) {
 #ifdef TEST_MAIN
 
 int main(int argc, char **argv) {
-	return mmzk_test_report(&test_summary, argc, argv);
+	return mmzk_test_report(&integraltest_summary, argc, argv);
 }
 
 #endif /* TEST MAIN */
