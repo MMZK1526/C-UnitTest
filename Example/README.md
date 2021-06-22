@@ -11,6 +11,7 @@ First, let's run one of the modular tests, say **integraltest**:
 `./integraltest`
 
 ```
+
 Test int & uint (int_test):
 Test int:
         Int 16: Not OK!
@@ -25,6 +26,7 @@ On line 13 of function int_test in integraltest.c.
 
 2 of 8 tests have failed in the function int_test!
 
+
 Test char & bool (char_bool_test):
 Test char:
         'C' == 'c': Not OK!
@@ -34,18 +36,21 @@ On line 28 of function char_bool_test in integraltest.c.
 
 1 of 4 tests has failed in the function char_bool_test!
 
+
 Test pointer (pointer_test):
 Test address:
         different address: Not OK!
-Expected: 0x7ffee944769c
-Actual:   0x7ffee9447698
+Expected: 0x7ffee2dde69c
+Actual:   0x7ffee2dde698
 On line 48 of function pointer_test in integraltest.c.
 
 1 of 3 tests has failed in the function pointer_test!
 
-------------------------------------------------------------
+
+----------------------------------------------------------
 
 Number of failed tests in integraltest.c: 4.
+
 ```
 
 As shown above, the report only contains failed assertions. There are three functions, namely int_test, char_bool_test, and pointer_test. Each function has one or more sections. Only the sections containing failed assertions are shown.
@@ -55,6 +60,7 @@ To show all assertions, run with the `-v` option:
 `./integraltest -v`
 
 ```
+
 Test int & uint (int_test):
 Test int:
         Int 8: OK!
@@ -78,6 +84,7 @@ Test uint:
 
 2 of 8 tests have failed in the function int_test!
 
+
 Test char & bool (char_bool_test):
 Test char:
         'c' == 'c': OK!
@@ -93,6 +100,7 @@ Test bool:
 
 1 of 4 tests has failed in the function char_bool_test!
 
+
 Test pointer (pointer_test):
 Test value:
         x == y: OK!
@@ -100,16 +108,18 @@ Test value:
 Test address:
         same address: OK!
         different address: Not OK!
-Expected: 0x7ffee06c568c
-Actual:   0x7ffee06c5688
+Expected: 0x7ffee20b569c
+Actual:   0x7ffee20b5698
 On line 48 of function pointer_test in integraltest.c.
 
 
 1 of 3 tests has failed in the function pointer_test!
 
-------------------------------------------------------------
+
+----------------------------------------------------------
 
 Number of failed tests in integraltest.c: 4.
+
 ```
 
 Note that the sections `Test uint:` and  `Test value:` appear only in this verbose run, since they contain no failed assertions.  

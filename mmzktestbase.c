@@ -694,12 +694,12 @@ int _mmzk_test_report(
 	(*summary_fun)();
 
 	fail_num = mmzk_test_summary_fail_num - fail_num;
-	puts("------------------------------------------------------------\n");
+	puts("\n----------------------------------------------------------\n");
 	if (fail_num) {
-		printf("Number of failed tests in %s: %llu.\n", 
+		printf("Number of failed tests in %s: %llu.\n\n", 
 			file, fail_num);
 	} else {
-		printf("No failed tests in %s.\n", file);
+		printf("No failed tests in %s.\n\n", file);
 	}
 
 	return (int)fail_num;
@@ -715,8 +715,11 @@ mmzk_test_summary_t _mmzk_test_summary(
 	char *plural_test, *plural_have;
 	bool show_summary = mmzk_assert_show_summary;
 
-	if (*msg != '\0' && show_summary) {
-		fputs(msg, stdout);
+	if (show_summary) {
+		puts("");
+		if (*msg != '\0') {
+			fputs(msg, stdout);
+		}
 	}
 
 	mmzk_assert_show_summary = false;
