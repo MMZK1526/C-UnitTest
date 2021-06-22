@@ -4,8 +4,12 @@
 #include "testsuite.h"
 
 void testsuite_summary(void) {
-	mmzk_test_summary(floattest_summary, "Floating Point Tests:\n");
-	mmzk_test_summary(integraltest_summary, "Integral Tests:\n");
+	mmzk_test_summary(
+		floattest_summary, 
+		"Floating Point Tests (floattest_summary):\n");
+	mmzk_test_summary(
+		integraltest_summary, 
+		"Integral Tests (integraltest_summary):\n");
 }
 
 // Run with the option "-v" to go verbose (show successful tests).

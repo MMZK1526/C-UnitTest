@@ -23,7 +23,7 @@ static void float_test(void) {
 }
 
 void floattest_summary(void) {
-	mmzk_test_summary(float_test, "Float Test:\n");
+	mmzk_test_summary(float_test, "Float Test (float_test):\n");
 }
 
 #ifdef TEST_MAIN

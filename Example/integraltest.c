@@ -40,7 +40,7 @@ static void pointer_test(void) {
 	int32_t *ptr2 = &y;
 
 	mmzk_assert_pop_caption("Test value:\n");
-	mmzk_assert_equal_int32(x, y, "\tx == y");
+	mmzk_assert_equal_int32(x, y, "\tx == y: ");
 	mmzk_assert_pop_caption("\n");
 
 	mmzk_assert_pop_caption("Test address:\n");
@@ -50,9 +50,10 @@ static void pointer_test(void) {
 }
 
 void integraltest_summary(void) {
-	mmzk_test_summary(int_test, "Test int & uint:\n");
-	mmzk_test_summary(char_bool_test, "Test char & bool:\n");
-	mmzk_test_summary(pointer_test, "Test pointer:\n");
+	mmzk_test_summary(int_test, "Test int & uint (int_test):\n");
+	mmzk_test_summary(
+		char_bool_test, "Test char & bool (char_bool_test):\n");
+	mmzk_test_summary(pointer_test, "Test pointer (pointer_test):\n");
 }
 
 #ifdef TEST_MAIN
