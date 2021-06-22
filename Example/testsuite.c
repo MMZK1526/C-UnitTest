@@ -8,6 +8,7 @@ void testsuite_summary(void) {
 	mmzk_test_summary(integraltest_summary, "Integral Tests:\n");
 }
 
+// Run with the option "-v" to go verbose (show successful tests).
 int main(int argc, char **argv) {
 	return mmzk_test_report(&testsuite_summary, argc, argv);
 }

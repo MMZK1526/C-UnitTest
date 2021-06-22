@@ -28,6 +28,7 @@ void floattest_summary(void) {
 
 #ifdef TEST_MAIN
 
+// Run with the option "-v" to go verbose (show successful tests).
 int main(int argc, char **argv) {
 	return mmzk_test_report(&floattest_summary, argc, argv);
 }
