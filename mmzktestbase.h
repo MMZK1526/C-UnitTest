@@ -265,7 +265,7 @@ _mmzk_test_report(SUMMARY_FUN, __FILE__, ARGC, ARGV)
 /*
 	Take a void function(void) that uses the assert functions, invoke it
 	and generate a summary.
-	Do not pass the address of the assert function; use it's name directly.
+	Do not pass the address of the assert function; use its name directly.
 */
 #define mmzk_test_summary(TEST_FUN, MSG) \
 _mmzk_test_summary(&TEST_FUN, MSG, MMZK_DUMP(TEST_FUN))

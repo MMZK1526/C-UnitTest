@@ -14,5 +14,5 @@ void testsuite_summary(void) {
 
 // Run with the option "-v" to go verbose (show successful tests).
 int main(int argc, char **argv) {
-	return mmzk_test_report(&testsuite_summary, argc, argv);
+	return mmzk_test_report(testsuite_summary, argc, argv);
 }

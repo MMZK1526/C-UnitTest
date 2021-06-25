@@ -691,7 +691,7 @@ int _mmzk_test_report(
 		mmzk_assert_set_show_success(true);
 	}
 
-	(*summary_fun)();
+	summary_fun();
 
 	fail_num = mmzk_test_summary_fail_num - fail_num;
 	puts("\n----------------------------------------------------------\n");
@@ -723,7 +723,7 @@ mmzk_test_summary_t _mmzk_test_summary(
 	}
 
 	mmzk_assert_show_summary = false;
-	(*test_fun)();
+	test_fun();
 	mmzk_assert_show_summary = show_summary;
 
 	fail_num = mmzk_test_summary_fail_num - fail_num;
