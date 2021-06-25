@@ -5,6 +5,9 @@
 
 void testsuite_summary(void) {
 	mmzk_test_summary(
+		compoundtest_summary, 
+		"Compound Type Tests (compoundtest_summary):\n");
+	mmzk_test_summary(
 		floattest_summary, 
 		"Floating Point Tests (floattest_summary):\n");
 	mmzk_test_summary(

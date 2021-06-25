@@ -7,6 +7,7 @@
 #ifndef TESTSUITE_H
 #define TESTSUITE_H
 
+extern void compoundtest_summary(void);
 extern void floattest_summary(void);
 extern void integraltest_summary(void);
 
