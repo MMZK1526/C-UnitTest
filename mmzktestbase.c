@@ -36,7 +36,6 @@ bool _mmzk_assert_equal_any(
 			fputs(msg, stdout);
 			puts("OK!");
 		}
-
 		return true;
 	} 
 	expected_str = to_string(expected);
@@ -47,8 +46,7 @@ bool _mmzk_assert_equal_any(
 		mmzk_assert_show_caption = false;
 	}
 	fputs(msg, stdout);
-	printf(
-		"Not OK!\n%-10s%s\n%-10s%s\n", 
+	printf("Not OK!\n%-10s%s\n%-10s%s\n", 
 		"Expected:",
 		expected_str != NULL ? expected_str : "(null)",
 		"Actual:",
@@ -83,8 +81,7 @@ bool _mmzk_assert_equal_bool(
 			mmzk_assert_show_caption = false;
 		}
 		fputs(msg, stdout);
-		printf(
-			"Not OK!\n%-10s%s\n%-10s%s\n", 
+		printf("Not OK!\n%-10s%s\n%-10s%s\n", 
 			"Expected:",
 			expected ? "true" : "false",
 			"Actual:",
@@ -110,7 +107,6 @@ bool _mmzk_assert_equal_char(
 			fputs(msg, stdout);
 			puts("OK!");
 		}
-
 		return true;
 	}
 	mmzk_test_summary_fail_num++;
@@ -119,14 +115,8 @@ bool _mmzk_assert_equal_char(
 		mmzk_assert_show_caption = false;
 	}
 	fputs(msg, stdout);
-	printf(
-		"Not OK!\n%-10s%c (0x%.2x)\n%-10s%c (0x%.2x)\n", 
-		"Expected:",
-		expected,
-		expected, 
-		"Actual:",
-		actual, 
-		actual);
+	printf("Not OK!\n%-10s%c (0x%.2x)\n%-10s%c (0x%.2x)\n", 
+		"Expected:", expected, expected, "Actual:", actual, actual);
 	printf("On line %d of function %s in %s.\n\n", line, func, file);
 
 	return false;
@@ -156,12 +146,8 @@ bool _mmzk_assert_equal_double(
 			mmzk_assert_show_caption = false;
 		}
 		fputs(msg, stdout);
-		printf(
-			"Not OK!\n%-10s%lf\n%-10s%lf\n", 
-			"Expected:",
-			expected,
-			"Actual:",
-			actual);
+		printf("Not OK!\n%-10s%lf\n%-10s%lf\n", 
+			"Expected:", expected, "Actual:", actual);
 		printf("On line %d of function %s in %s.\n\n", 
 			line, func, file);
 	}
@@ -193,12 +179,8 @@ bool _mmzk_assert_equal_float(
 			mmzk_assert_show_caption = false;
 		}
 		fputs(msg, stdout);
-		printf(
-			"Not OK!\n%-10s%f\n%-10s%f\n", 
-			"Expected:",
-			expected,
-			"Actual:",
-			actual);
+		printf("Not OK!\n%-10s%f\n%-10s%f\n", 
+			"Expected:", expected, "Actual:", actual);
 		printf("On line %d of function %s in %s.\n\n", 
 			line, func, file);
 	}
@@ -220,7 +202,6 @@ bool _mmzk_assert_equal_int8(
 			fputs(msg, stdout);
 			puts("OK!");
 		}
-
 		return true;
 	} 
 	mmzk_test_summary_fail_num++;
@@ -229,14 +210,8 @@ bool _mmzk_assert_equal_int8(
 		mmzk_assert_show_caption = false;
 	}
 	fputs(msg, stdout);
-	printf(
-		"Not OK!\n%-10s%.4d (0x%.2x)\n%-10s%.4d (0x%.2x)\n", 
-		"Expected:",
-		expected,
-		expected, 
-		"Actual:",
-		actual, 
-		actual);
+	printf("Not OK!\n%-10s%.4d (0x%.2x)\n%-10s%.4d (0x%.2x)\n", 
+		"Expected:", expected, expected, "Actual:", actual, actual);
 	printf("On line %d of function %s in %s.\n\n", line, func, file);
 
 	return false;
@@ -256,7 +231,6 @@ bool _mmzk_assert_equal_int16(
 			fputs(msg, stdout);
 			puts("OK!");
 		}
-
 		return true;
 	}
 	mmzk_test_summary_fail_num++;
@@ -265,14 +239,8 @@ bool _mmzk_assert_equal_int16(
 		mmzk_assert_show_caption = false;
 	}
 	fputs(msg, stdout);
-	printf(
-		"Not OK!\n%-10s%.6d (0x%.4x)\n%-10s%.6d (0x%.4x)\n", 
-		"Expected:",
-		expected,
-		expected, 
-		"Actual:",
-		actual, 
-		actual);
+	printf("Not OK!\n%-10s%.6d (0x%.4x)\n%-10s%.6d (0x%.4x)\n", 
+		"Expected:", expected, expected, "Actual:", actual, actual);
 	printf("On line %d of function %s in %s.\n\n", line, func, file);
 
 	return false;
@@ -292,7 +260,6 @@ bool _mmzk_assert_equal_int32(
 			fputs(msg, stdout);
 			puts("OK!");
 		}
-
 		return true;
 	}
 	mmzk_test_summary_fail_num++;
@@ -301,14 +268,8 @@ bool _mmzk_assert_equal_int32(
 		mmzk_assert_show_caption = false;
 	}
 	fputs(msg, stdout);
-	printf(
-		"Not OK!\n%-10s%.11d (0x%.8x)\n%-10s%.11d (0x%.8x)\n", 
-		"Expected:",
-		expected,
-		expected, 
-		"Actual:",
-		actual, 
-		actual);
+	printf("Not OK!\n%-10s%.11d (0x%.8x)\n%-10s%.11d (0x%.8x)\n", 
+		"Expected:", expected, expected, "Actual:", actual, actual);
 	printf("On line %d of function %s in %s.\n\n", line, func, file);
 
 	return false;
@@ -328,7 +289,6 @@ bool _mmzk_assert_equal_int64(
 			fputs(msg, stdout);
 			puts("OK!");
 		}
-
 		return true;
 	}
 	mmzk_test_summary_fail_num++;
@@ -337,15 +297,9 @@ bool _mmzk_assert_equal_int64(
 		mmzk_assert_show_caption = false;
 	}
 	fputs(msg, stdout);
-	printf(
-		"Not OK!\n"
-		"%-10s%.20lld (0x%.16llx)\n%-10s%.20lld (0x%.16llx)\n", 
-		"Expected:",
-		expected,
-		expected, 
-		"Actual:",
-		actual, 
-		actual);
+	puts("Not OK!");
+	printf("%-10s%.20lld (0x%.16llx)\n%-10s%.20lld (0x%.16llx)\n", 
+		"Expected:", expected, expected, "Actual:", actual, actual);
 	printf("On line %d of function %s in %s.\n\n", line, func, file);
 
 	return false;
@@ -365,7 +319,6 @@ bool _mmzk_assert_equal_ptr(
 			fputs(msg, stdout);
 			puts("OK!");
 		}
-
 		return true;
 	}
 	mmzk_test_summary_fail_num++;
@@ -374,12 +327,8 @@ bool _mmzk_assert_equal_ptr(
 		mmzk_assert_show_caption = false;
 	}
 	fputs(msg, stdout);
-	printf(
-		"Not OK!\n%-10s%p\n%-10s%p\n", 
-		"Expected:",
-		expected,
-		"Actual:",
-		actual);
+	printf("Not OK!\n%-10s%p\n%-10s%p\n", 
+		"Expected:", expected, "Actual:", actual);
 	printf("On line %d of function %s in %s.\n\n", line, func, file);
 
 	return false;
@@ -399,7 +348,6 @@ bool _mmzk_assert_equal_string(
 			fputs(msg, stdout);
 			puts("OK!");
 		}
-
 		return true;
 	}
 	mmzk_test_summary_fail_num++;
@@ -408,12 +356,8 @@ bool _mmzk_assert_equal_string(
 		mmzk_assert_show_caption = false;
 	}
 	fputs(msg, stdout);
-	printf(
-		"Not OK!\n%-10s%s\n%-10s%s\n", 
-		"Expected:",
-		expected,
-		"Actual:",
-		actual);
+	printf("Not OK!\n%-10s%s\n%-10s%s\n", 
+		"Expected:", expected, "Actual:", actual);
 	printf("On line %d of function %s in %s.\n\n", line, func, file);
 
 	return false;
@@ -460,8 +404,7 @@ bool _mmzk_assert_equal_struct(
 		fputs(msg, stdout);
 		expected_str = to_string(expected);
 		actual_str = to_string(actual);
-		printf(
-			"Not OK!\n%-10s%s\n%-10s%s\n", 
+		printf("Not OK!\n%-10s%s\n%-10s%s\n", 
 			"Expected:",
 			expected_str != NULL ? expected_str : "(null)",
 			"Actual:",
@@ -489,7 +432,6 @@ bool _mmzk_assert_equal_uint8(
 			fputs(msg, stdout);
 			puts("OK!");
 		}
-
 		return true;
 	}
 	mmzk_test_summary_fail_num++;
@@ -498,14 +440,8 @@ bool _mmzk_assert_equal_uint8(
 		mmzk_assert_show_caption = false;
 	}
 	fputs(msg, stdout);
-	printf(
-		"Not OK!\n%-10s%.3u (0x%.2x)\n%-10s%.3u (0x%.2x)\n", 
-		"Expected:",
-		expected,
-		expected, 
-		"Actual:",
-		actual, 
-		actual);
+	printf("Not OK!\n%-10s%.3u (0x%.2x)\n%-10s%.3u (0x%.2x)\n", 
+		"Expected:", expected, expected, "Actual:", actual, actual);
 	printf("On line %d of function %s in %s.\n\n", line, func, file);
 
 	return false;
@@ -525,7 +461,6 @@ bool _mmzk_assert_equal_uint16(
 			fputs(msg, stdout);
 			puts("OK!");
 		}
-
 		return true;
 	}
 	mmzk_test_summary_fail_num++;
@@ -534,14 +469,8 @@ bool _mmzk_assert_equal_uint16(
 		mmzk_assert_show_caption = false;
 	}
 	fputs(msg, stdout);
-	printf(
-		"Not OK!\n%-10s%.5u (0x%.4x)\n%-10s%.5u (0x%.4x)\n", 
-		"Expected:",
-		expected,
-		expected, 
-		"Actual:",
-		actual, 
-		actual);
+	printf("Not OK!\n%-10s%.5u (0x%.4x)\n%-10s%.5u (0x%.4x)\n", 
+		"Expected:", expected, expected, "Actual:", actual, actual);
 	printf("On line %d of function %s in %s.\n\n", line, func, file);
 
 	return false;
@@ -561,7 +490,6 @@ bool _mmzk_assert_equal_uint32(
 			fputs(msg, stdout);
 			puts("OK!");
 		}
-
 		return true;
 	}
 	mmzk_test_summary_fail_num++;
@@ -570,14 +498,8 @@ bool _mmzk_assert_equal_uint32(
 		mmzk_assert_show_caption = false;
 	}
 	fputs(msg, stdout);
-	printf(
-		"Not OK!\n%-10s%.10u (0x%.8x)\n%-10s%.10u (0x%.8x)\n", 
-		"Expected:",
-		expected,
-		expected, 
-		"Actual:",
-		actual, 
-		actual);
+	printf("Not OK!\n%-10s%.10u (0x%.8x)\n%-10s%.10u (0x%.8x)\n", 
+		"Expected:", expected, expected, "Actual:", actual, actual);
 	printf("On line %d of function %s in %s.\n\n", line, func, file);
 
 	return false;
@@ -606,15 +528,9 @@ bool _mmzk_assert_equal_uint64(
 		mmzk_assert_show_caption = false;
 	}
 	fputs(msg, stdout);
-	printf(
-		"Not OK!\n"
-		"%-10s%.20llu (0x%.16llx)\n%-10s%.20llu (0x%.16llx)\n", 
-		"Expected:",
-		expected,
-		expected, 
-		"Actual:",
-		actual, 
-		actual);
+	puts("Not OK!");
+	printf("%-10s%.20llu (0x%.16llx)\n%-10s%.20llu (0x%.16llx)\n", 
+		"Expected:", expected, expected, "Actual:", actual, actual);
 	printf("On line %d of function %s in %s.\n\n", line, func, file);
 
 	return false;
@@ -732,8 +648,7 @@ mmzk_test_summary_t _mmzk_test_summary(
 	if (show_summary) {
 		if (fail_num) {
 			plural_have = fail_num == 1 ? "has" : "have";
-			printf(
-				"%llu of %llu %s %s failed in the function %s!"
+			printf("%llu of %llu %s %s failed in the function %s!"
 				"\n\n", fail_num, test_num, plural_test, 
 				plural_have, func);
 		} else {
