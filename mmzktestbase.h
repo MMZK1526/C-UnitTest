@@ -24,6 +24,7 @@
 #define MMZK_DUMP(VAR) #VAR
 #endif /* MMZKMACRO_MISCELLANEOUS */
 
+#include <iso646.h>
 #include <stdbool.h>
 #include <stdint.h>
 
@@ -226,7 +227,7 @@ _mmzk_assert_fail(EXPECTED, ACTUAL, MSG, __LINE__, __func__, __FILE__)
 #define mmzk_assert_pop_caption(STR) do { \
 	mmzk_assert_caption = STR; \
 	mmzk_assert_show_caption = *STR != '\0'; \
-	if (mmzk_assert_show_success && mmzk_assert_show_caption) { \
+	if (mmzk_assert_show_success and mmzk_assert_show_caption) { \
 		fputs(mmzk_assert_caption, stdout); \
 	} \
 } while (0)
