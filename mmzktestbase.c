@@ -4,8 +4,6 @@
 	Simple & lightweighted test utility.
 */
 
-#include <stdbool.h>
-#include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -41,16 +39,16 @@ bool _mmzk_assert_equal_any(
 	expected_str = to_string(expected);
 	actual_str = to_string(actual);
 	mmzk_test_summary_fail_num++;
-	if (!mmzk_assert_show_success && mmzk_assert_show_caption) {
+	if (not mmzk_assert_show_success and mmzk_assert_show_caption) {
 		printf(mmzk_assert_caption, stdout);
 		mmzk_assert_show_caption = false;
 	}
 	fputs(msg, stdout);
 	printf("Not OK!\n%-10s%s\n%-10s%s\n", 
 		"Expected:",
-		expected_str != NULL ? expected_str : "(null)",
+		expected_str ? expected_str : "(null)",
 		"Actual:",
-		actual_str != NULL ? actual_str : "(null)");
+		actual_str ? actual_str : "(null)");
 	printf("On line %d of function %s in %s.\n\n", line, func, file);
 	free(expected_str);
 	free(actual_str);
@@ -76,7 +74,8 @@ bool _mmzk_assert_equal_bool(
 		}
 	} else {
 		mmzk_test_summary_fail_num++;
-		if (!mmzk_assert_show_success && mmzk_assert_show_caption) {
+		if (not mmzk_assert_show_success and mmzk_assert_show_caption) 
+		{
 			printf(mmzk_assert_caption, stdout);
 			mmzk_assert_show_caption = false;
 		}
@@ -110,7 +109,7 @@ bool _mmzk_assert_equal_char(
 		return true;
 	}
 	mmzk_test_summary_fail_num++;
-	if (!mmzk_assert_show_success && mmzk_assert_show_caption) {
+	if (not mmzk_assert_show_success and mmzk_assert_show_caption) {
 		printf(mmzk_assert_caption, stdout);
 		mmzk_assert_show_caption = false;
 	}
@@ -131,7 +130,7 @@ bool _mmzk_assert_equal_double(
 	const char *func, 
 	const char *file) 
 {
-	bool result = expected - actual < error && actual - expected < error;
+	bool result = expected - actual < error and actual - expected < error;
 
 	mmzk_test_summary_test_num++;
 	if (result) {
@@ -141,7 +140,8 @@ bool _mmzk_assert_equal_double(
 		}
 	} else {
 		mmzk_test_summary_fail_num++;
-		if (!mmzk_assert_show_success && mmzk_assert_show_caption) {
+		if (not mmzk_assert_show_success and mmzk_assert_show_caption) 
+		{
 			printf(mmzk_assert_caption, stdout);
 			mmzk_assert_show_caption = false;
 		}
@@ -164,7 +164,7 @@ bool _mmzk_assert_equal_float(
 	const char *func, 
 	const char *file) 
 {
-	bool result = expected - actual < error && actual - expected < error;
+	bool result = expected - actual < error and actual - expected < error;
 
 	mmzk_test_summary_test_num++;
 	if (result) {
@@ -174,7 +174,8 @@ bool _mmzk_assert_equal_float(
 		}
 	} else {
 		mmzk_test_summary_fail_num++;
-		if (!mmzk_assert_show_success && mmzk_assert_show_caption) {
+		if (not mmzk_assert_show_success and mmzk_assert_show_caption) 
+		{
 			printf(mmzk_assert_caption, stdout);
 			mmzk_assert_show_caption = false;
 		}
@@ -205,7 +206,7 @@ bool _mmzk_assert_equal_int8(
 		return true;
 	} 
 	mmzk_test_summary_fail_num++;
-	if (!mmzk_assert_show_success && mmzk_assert_show_caption) {
+	if (not mmzk_assert_show_success and mmzk_assert_show_caption) {
 		printf(mmzk_assert_caption, stdout);
 		mmzk_assert_show_caption = false;
 	}
@@ -234,7 +235,7 @@ bool _mmzk_assert_equal_int16(
 		return true;
 	}
 	mmzk_test_summary_fail_num++;
-	if (!mmzk_assert_show_success && mmzk_assert_show_caption) {
+	if (not mmzk_assert_show_success and mmzk_assert_show_caption) {
 		printf(mmzk_assert_caption, stdout);
 		mmzk_assert_show_caption = false;
 	}
@@ -263,7 +264,7 @@ bool _mmzk_assert_equal_int32(
 		return true;
 	}
 	mmzk_test_summary_fail_num++;
-	if (!mmzk_assert_show_success && mmzk_assert_show_caption) {
+	if (not mmzk_assert_show_success and mmzk_assert_show_caption) {
 		printf(mmzk_assert_caption, stdout);
 		mmzk_assert_show_caption = false;
 	}
@@ -292,7 +293,7 @@ bool _mmzk_assert_equal_int64(
 		return true;
 	}
 	mmzk_test_summary_fail_num++;
-	if (!mmzk_assert_show_success && mmzk_assert_show_caption) {
+	if (not mmzk_assert_show_success and mmzk_assert_show_caption) {
 		printf(mmzk_assert_caption, stdout);
 		mmzk_assert_show_caption = false;
 	}
@@ -322,7 +323,7 @@ bool _mmzk_assert_equal_ptr(
 		return true;
 	}
 	mmzk_test_summary_fail_num++;
-	if (!mmzk_assert_show_success && mmzk_assert_show_caption) {
+	if (not mmzk_assert_show_success and mmzk_assert_show_caption) {
 		printf(mmzk_assert_caption, stdout);
 		mmzk_assert_show_caption = false;
 	}
@@ -343,7 +344,7 @@ bool _mmzk_assert_equal_string(
 	const char *file) 
 {
 	mmzk_test_summary_test_num++;
-	if (!strcmp(expected, actual)) {
+	if (not strcmp(expected, actual)) {
 		if (mmzk_assert_show_success) {
 			fputs(msg, stdout);
 			puts("OK!");
@@ -351,7 +352,7 @@ bool _mmzk_assert_equal_string(
 		return true;
 	}
 	mmzk_test_summary_fail_num++;
-	if (!mmzk_assert_show_success && mmzk_assert_show_caption) {
+	if (not mmzk_assert_show_success and mmzk_assert_show_caption) {
 		printf(mmzk_assert_caption, stdout);
 		mmzk_assert_show_caption = false;
 	}
@@ -397,7 +398,8 @@ bool _mmzk_assert_equal_struct(
 		char *expected_str, *actual_str;
 
 		mmzk_test_summary_fail_num++;
-		if (!mmzk_assert_show_success && mmzk_assert_show_caption) {
+		if (not mmzk_assert_show_success and mmzk_assert_show_caption) 
+		{
 			printf(mmzk_assert_caption, stdout);
 			mmzk_assert_show_caption = false;
 		}
@@ -406,9 +408,9 @@ bool _mmzk_assert_equal_struct(
 		actual_str = to_string(actual);
 		printf("Not OK!\n%-10s%s\n%-10s%s\n", 
 			"Expected:",
-			expected_str != NULL ? expected_str : "(null)",
+			expected_str ? expected_str : "(null)",
 			"Actual:",
-			actual_str != NULL ? actual_str : "(null)");
+			actual_str ? actual_str : "(null)");
 		printf("On line %d of function %s in %s.\n\n", 
 			line, func, file);
 		free(expected_str);
@@ -435,7 +437,7 @@ bool _mmzk_assert_equal_uint8(
 		return true;
 	}
 	mmzk_test_summary_fail_num++;
-	if (!mmzk_assert_show_success && mmzk_assert_show_caption) {
+	if (not mmzk_assert_show_success and mmzk_assert_show_caption) {
 		printf(mmzk_assert_caption, stdout);
 		mmzk_assert_show_caption = false;
 	}
@@ -464,7 +466,7 @@ bool _mmzk_assert_equal_uint16(
 		return true;
 	}
 	mmzk_test_summary_fail_num++;
-	if (!mmzk_assert_show_success && mmzk_assert_show_caption) {
+	if (not mmzk_assert_show_success and mmzk_assert_show_caption) {
 		printf(mmzk_assert_caption, stdout);
 		mmzk_assert_show_caption = false;
 	}
@@ -493,7 +495,7 @@ bool _mmzk_assert_equal_uint32(
 		return true;
 	}
 	mmzk_test_summary_fail_num++;
-	if (!mmzk_assert_show_success && mmzk_assert_show_caption) {
+	if (not mmzk_assert_show_success and mmzk_assert_show_caption) {
 		printf(mmzk_assert_caption, stdout);
 		mmzk_assert_show_caption = false;
 	}
@@ -523,7 +525,7 @@ bool _mmzk_assert_equal_uint64(
 		return true;
 	}
 	mmzk_test_summary_fail_num++;
-	if (!mmzk_assert_show_success && mmzk_assert_show_caption) {
+	if (not mmzk_assert_show_success and mmzk_assert_show_caption) {
 		printf(mmzk_assert_caption, stdout);
 		mmzk_assert_show_caption = false;
 	}
@@ -541,7 +543,7 @@ bool _mmzk_assert_fail(
 {
 	mmzk_test_summary_test_num++;
 	mmzk_test_summary_fail_num++;
-	if (!mmzk_assert_show_success && mmzk_assert_show_caption) {
+	if (not mmzk_assert_show_success and mmzk_assert_show_caption) {
 		printf(mmzk_assert_caption, stdout);
 		mmzk_assert_show_caption = false;
 	}
@@ -566,7 +568,8 @@ bool _mmzk_assert_true(
 		}
 	} else {
 		mmzk_test_summary_fail_num++;
-		if (!mmzk_assert_show_success && mmzk_assert_show_caption) {
+		if (not mmzk_assert_show_success and mmzk_assert_show_caption) 
+		{
 			printf(mmzk_assert_caption, stdout);
 			mmzk_assert_show_caption = false;
 		}
@@ -603,7 +606,7 @@ int _mmzk_test_report(
 {
 	uint64_t fail_num = mmzk_test_summary_fail_num;
 
-	if (argc >= 2 && !strcmp("-v", argv[1])) {
+	if (argc >= 2 and not strcmp("-v", argv[1])) {
 		mmzk_assert_set_show_success(true);
 	}
 
