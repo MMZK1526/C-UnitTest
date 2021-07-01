@@ -101,7 +101,7 @@ typedef struct {
 } mmzk_test_summary_t;
 
 /*
-	Test if two pieces of data are equal based on an equal function 
+	Test if two pieces of data are equal based on an equal function
 	and a to_string function.
 	The data must have the generic type "void *".
 	The to_string function MUST RETURN A STRING IN THE HEAP.
@@ -242,7 +242,7 @@ _mmzk_assert_fail(EXPECTED, ACTUAL, MSG, __LINE__, __func__, __FILE__)
 */
 #define mmzk_assert_show_caption() do { \
 	mmzk_assert_show_caption = *STR != '\0'; \
-	if (mmzk_assert_show_success && mmzk_assert_show_caption) { \
+	if (mmzk_assert_show_success and mmzk_assert_show_caption) { \
 		fputs(mmzk_assert_caption, stdout); \
 	} \
 } while (0)
@@ -273,28 +273,28 @@ _mmzk_test_summary(&TEST_FUN, MSG, MMZK_DUMP(TEST_FUN))
 
 #ifdef __cplusplus
 extern "C" {
-#endif 
+#endif
 
 /*
-	Default equality function by casting the pointers to 8-bit int 
+	Default equality function by casting the pointers to 8-bit int
 	pointers and dereference.
 */
 extern bool mmzk_eq_int8(const void *, const void *);
 
 /*
-	Default equality function by casting the pointers to 16-bit int 
+	Default equality function by casting the pointers to 16-bit int
 	pointers and dereference.
 */
 extern bool mmzk_eq_int16(const void *, const void *);
 
 /*
-	Default equality function by casting the pointers to 32-bit int 
+	Default equality function by casting the pointers to 32-bit int
 	pointers and dereference.
 */
 extern bool mmzk_eq_int32(const void *, const void *);
 
 /*
-	Default equality function by casting the pointers to 64-bit int 
+	Default equality function by casting the pointers to 64-bit int
 	pointers and dereference.
 */
 extern bool mmzk_eq_int64(const void *, const void *);
